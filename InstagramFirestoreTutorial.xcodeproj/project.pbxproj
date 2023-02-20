@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		C419E10F29A3EA8900872C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E10E29A3EA8900872C9C /* AppDelegate.swift */; };
 		C419E11129A3EA8900872C9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E11029A3EA8900872C9C /* SceneDelegate.swift */; };
-		C419E11329A3EA8900872C9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E11229A3EA8900872C9C /* ViewController.swift */; };
-		C419E11629A3EA8900872C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C419E11429A3EA8900872C9C /* Main.storyboard */; };
 		C419E11829A3EA8B00872C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C419E11729A3EA8B00872C9C /* Assets.xcassets */; };
 		C419E11B29A3EA8B00872C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C419E11929A3EA8B00872C9C /* LaunchScreen.storyboard */; };
+		C419E12929A3ED6400872C9C /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E12829A3ED6400872C9C /* MainTabController.swift */; };
+		C419E12B29A3F12200872C9C /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E12A29A3F12200872C9C /* FeedController.swift */; };
+		C419E12D29A3F13300872C9C /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E12C29A3F13300872C9C /* SearchController.swift */; };
+		C419E12F29A3F14D00872C9C /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E12E29A3F14D00872C9C /* ImageSelectorController.swift */; };
+		C419E13129A3F15C00872C9C /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E13029A3F15C00872C9C /* NotificationsController.swift */; };
+		C419E13329A3F16900872C9C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E13229A3F16900872C9C /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C419E10B29A3EA8900872C9C /* InstagramFirestoreTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestoreTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C419E10E29A3EA8900872C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C419E11029A3EA8900872C9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C419E11229A3EA8900872C9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C419E11529A3EA8900872C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C419E11729A3EA8B00872C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C419E11A29A3EA8B00872C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C419E11C29A3EA8B00872C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C419E12829A3ED6400872C9C /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		C419E12A29A3F12200872C9C /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		C419E12C29A3F13300872C9C /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		C419E12E29A3F14D00872C9C /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		C419E13029A3F15C00872C9C /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		C419E13229A3F16900872C9C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		C419E10D29A3EA8900872C9C /* InstagramFirestoreTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				C419E12729A3EC1A00872C9C /* Model */,
+				C419E12629A3EC1800872C9C /* View */,
+				C419E12529A3EC1600872C9C /* ViewModel */,
+				C419E12429A3EC1400872C9C /* Controller */,
+				C419E12329A3EC1200872C9C /* API */,
+				C419E12229A3EBFD00872C9C /* Utils */,
 				C419E10E29A3EA8900872C9C /* AppDelegate.swift */,
 				C419E11029A3EA8900872C9C /* SceneDelegate.swift */,
-				C419E11229A3EA8900872C9C /* ViewController.swift */,
-				C419E11429A3EA8900872C9C /* Main.storyboard */,
 				C419E11729A3EA8B00872C9C /* Assets.xcassets */,
 				C419E11929A3EA8B00872C9C /* LaunchScreen.storyboard */,
 				C419E11C29A3EA8B00872C9C /* Info.plist */,
 			);
 			path = InstagramFirestoreTutorial;
+			sourceTree = "<group>";
+		};
+		C419E12229A3EBFD00872C9C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C419E12329A3EC1200872C9C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C419E12429A3EC1400872C9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C419E12829A3ED6400872C9C /* MainTabController.swift */,
+				C419E12A29A3F12200872C9C /* FeedController.swift */,
+				C419E12C29A3F13300872C9C /* SearchController.swift */,
+				C419E12E29A3F14D00872C9C /* ImageSelectorController.swift */,
+				C419E13029A3F15C00872C9C /* NotificationsController.swift */,
+				C419E13229A3F16900872C9C /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C419E12529A3EC1600872C9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C419E12629A3EC1800872C9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C419E12729A3EC1A00872C9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +187,6 @@
 			files = (
 				C419E11B29A3EA8B00872C9C /* LaunchScreen.storyboard in Resources */,
 				C419E11829A3EA8B00872C9C /* Assets.xcassets in Resources */,
-				C419E11629A3EA8900872C9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +197,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C419E11329A3EA8900872C9C /* ViewController.swift in Sources */,
 				C419E10F29A3EA8900872C9C /* AppDelegate.swift in Sources */,
+				C419E12D29A3F13300872C9C /* SearchController.swift in Sources */,
+				C419E12929A3ED6400872C9C /* MainTabController.swift in Sources */,
 				C419E11129A3EA8900872C9C /* SceneDelegate.swift in Sources */,
+				C419E13129A3F15C00872C9C /* NotificationsController.swift in Sources */,
+				C419E12F29A3F14D00872C9C /* ImageSelectorController.swift in Sources */,
+				C419E12B29A3F12200872C9C /* FeedController.swift in Sources */,
+				C419E13329A3F16900872C9C /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C419E11429A3EA8900872C9C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C419E11529A3EA8900872C9C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C419E11929A3EA8B00872C9C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +348,6 @@
 				INFOPLIST_FILE = InstagramFirestoreTutorial/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +375,6 @@
 				INFOPLIST_FILE = InstagramFirestoreTutorial/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
