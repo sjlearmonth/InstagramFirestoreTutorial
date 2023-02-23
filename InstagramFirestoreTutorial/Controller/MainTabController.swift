@@ -9,6 +9,8 @@ import UIKit
 
 class MainTabController: UITabBarController {
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +39,7 @@ class MainTabController: UITabBarController {
         viewControllers = [feed, search, imageSelector, notifications, profile]
         
         tabBar.tintColor = .black
-        tabBar.backgroundColor = .systemGray
+        tabBar.backgroundColor = .white
         
     }
     

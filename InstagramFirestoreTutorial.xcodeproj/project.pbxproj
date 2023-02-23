@@ -17,6 +17,8 @@
 		C419E12F29A3F14D00872C9C /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E12E29A3F14D00872C9C /* ImageSelectorController.swift */; };
 		C419E13129A3F15C00872C9C /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E13029A3F15C00872C9C /* NotificationsController.swift */; };
 		C419E13329A3F16900872C9C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C419E13229A3F16900872C9C /* ProfileController.swift */; };
+		C4FC297529A7CD1A00F9D343 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FC297429A7CD1A00F9D343 /* FeedCell.swift */; };
+		C4FC297929A7D1CE00F9D343 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FC297829A7D1CE00F9D343 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C419E12E29A3F14D00872C9C /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		C419E13029A3F15C00872C9C /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		C419E13229A3F16900872C9C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C4FC297429A7CD1A00F9D343 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		C4FC297829A7D1CE00F9D343 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		C419E12229A3EBFD00872C9C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C4FC297829A7D1CE00F9D343 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		C419E12629A3EC1800872C9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4FC297429A7CD1A00F9D343 /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C419E10F29A3EA8900872C9C /* AppDelegate.swift in Sources */,
+				C4FC297929A7D1CE00F9D343 /* Extensions.swift in Sources */,
 				C419E12D29A3F13300872C9C /* SearchController.swift in Sources */,
 				C419E12929A3ED6400872C9C /* MainTabController.swift in Sources */,
 				C419E11129A3EA8900872C9C /* SceneDelegate.swift in Sources */,
@@ -205,6 +212,7 @@
 				C419E12F29A3F14D00872C9C /* ImageSelectorController.swift in Sources */,
 				C419E12B29A3F12200872C9C /* FeedController.swift in Sources */,
 				C419E13329A3F16900872C9C /* ProfileController.swift in Sources */,
+				C4FC297529A7CD1A00F9D343 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
