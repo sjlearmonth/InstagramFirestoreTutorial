@@ -54,7 +54,14 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.width, height: 200.0)
+        let TOP_MARGIN = 8.0, PROFILE_IMAGE_HEIGHT = 40.0, BOTTOM_MARGIN = 8.0
+        let POST_IMAGEVIEW_EXTRA = 50.0, FINAL_BOTTOM_MARGIN = 60.0
+        let cellWidth = view.frame.width
+        var cellHeight = cellWidth + TOP_MARGIN + PROFILE_IMAGE_HEIGHT + BOTTOM_MARGIN
+        
+        cellHeight += POST_IMAGEVIEW_EXTRA
+        cellHeight += FINAL_BOTTOM_MARGIN
+        return CGSize(width: cellWidth, height: cellHeight)
         
     }
     
