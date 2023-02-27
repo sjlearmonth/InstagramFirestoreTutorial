@@ -64,6 +64,14 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    private let bookmarkButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "bookmark")!, for: .normal)
+        button.tintColor = .black
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+        
     private let likesLabel: UILabel = {
         let label = UILabel()
         label.text = "1 like"
@@ -129,6 +137,12 @@ class FeedCell: UICollectionViewCell {
             stackView.topAnchor.constraint(equalTo: postImageView.bottomAnchor),
             stackView.widthAnchor.constraint(equalToConstant: 120.0),
             stackView.heightAnchor.constraint(equalToConstant: 50.0)
+        ])
+        
+        addSubview(bookmarkButton)
+        NSLayoutConstraint.activate([
+            bookmarkButton.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 8.0),
+            bookmarkButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -8.0)
         ])
         
         addSubview(likesLabel)
