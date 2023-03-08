@@ -23,12 +23,20 @@ class LoginController: UIViewController {
         case password
     }
 
-    private lazy var emailTextField = createTextField(type: .email)
+    private let emailTextField: CustomTextField = {
+        let textField = CustomTextField(placeholder: "Email")
+        textField.keyboardType = .emailAddress
+        return textField
+    }()
     
-    private lazy var passwordTextField = createTextField(type: .password)
+    private let passwordTextField: CustomTextField = {
+        let textField = CustomTextField(placeholder: "Password")
+        textField.isSecureTextEntry = true
+        return textField
+    }()
         
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, logInButton])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, logInButton, passwordRetrievalButton])
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,13 +55,14 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private let inviteRegistrationButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        let questionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.7), .font: UIFont.systemFont(ofSize: 16.0)]
-        
-        return button
-    }()
+    private enum InviteType {
+        case passwordRetrieval
+        case registerAccount
+    }
+    
+    private lazy var inviteRegistrationButton = createCustomInviteButton(type: .registerAccount)
+    
+    private lazy var passwordRetrievalButton = createCustomInviteButton(type: .passwordRetrieval)
     
     // MARK: - Class Lifecycle Methods
     
@@ -105,31 +114,41 @@ class LoginController: UIViewController {
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32.0)
         ])
         
+        view.addSubview(inviteRegistrationButton)
+        NSLayoutConstraint.activate([
+            inviteRegistrationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            inviteRegistrationButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
-    private func createTextField(type: TextFieldType) -> UITextField {
+    private func createCustomInviteButton(type: InviteType) -> UIButton {
         
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.textColor = .white
-        textField.keyboardAppearance = .dark
-        textField.keyboardType = .emailAddress
-        textField.backgroundColor = UIColor(white: 1.0, alpha: 0.1)
-        textField.setHeight(50.0)
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        let button = UIButton(type: .system)
         
-        if case .email = type {
+        let questionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.7), .font: UIFont.systemFont(ofSize: 16.0)]
+        
+        let actionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 16.0)]
+
+        var attributedTitle = NSMutableAttributedString()
             
-            textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
-            textField.isSecureTextEntry = false
+        if case .passwordRetrieval = type {
+            
+            attributedTitle = NSMutableAttributedString(string: "Forgotten your password? ", attributes: questionAttributes)
+            
+            attributedTitle.append(NSAttributedString(string: "Get help logging in", attributes: actionAttributes))
+            
         } else {
             
-            textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
-            textField.isSecureTextEntry = true
+            attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: questionAttributes)
+
+            attributedTitle.append(NSAttributedString(string: "Sign up", attributes: actionAttributes))
+            
         }
         
+        button.setAttributedTitle(attributedTitle, for: .normal)
         
-        return textField
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
     }
-    
 }
