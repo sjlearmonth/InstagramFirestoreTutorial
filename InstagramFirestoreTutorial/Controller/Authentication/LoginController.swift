@@ -18,11 +18,6 @@ class LoginController: UIViewController {
         return imageView
     }()
     
-    private enum TextFieldType {
-        case email
-        case password
-    }
-
     private let emailTextField: CustomTextField = {
         let textField = CustomTextField(placeholder: "Email")
         textField.keyboardType = .emailAddress
@@ -54,16 +49,22 @@ class LoginController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+        
+    private let inviteRegistrationButton: UIButton = {
+       
+        let button = UIButton(type: .system)
+        button.setAttributedTitle(withQuestion: "Don't have an account?", andAction: "Sign Up")
+        button.addTarget(LoginController.self, action: #selector(presentRegistrationController), for: .touchUpInside)
+        return button
+    }()
     
-    private enum InviteType {
-        case passwordRetrieval
-        case registerAccount
-    }
-    
-    private lazy var inviteRegistrationButton = createCustomInviteButton(type: .registerAccount)
-    
-    private lazy var passwordRetrievalButton = createCustomInviteButton(type: .passwordRetrieval)
-    
+    private let passwordRetrievalButton: UIButton = {
+       
+        let button = UIButton(type: .system)
+        button.setAttributedTitle(withQuestion: "Forgotten your password?", andAction: "Get help logging in")
+        return button
+    }()
+
     // MARK: - Class Lifecycle Methods
     
     override func viewDidLoad() {
@@ -84,20 +85,10 @@ class LoginController: UIViewController {
         
         configureGradientLayer()
         
-        configureSubViews()
-        
+        configureSubviews()
     }
     
-    private func configureGradientLayer() {
-        
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
-    
-    private func configureSubViews() {
+    private func configureSubviews() {
         
         view.addSubview(iconImageView)
         NSLayoutConstraint.activate([
@@ -121,34 +112,10 @@ class LoginController: UIViewController {
         ])
     }
     
-    private func createCustomInviteButton(type: InviteType) -> UIButton {
-        
-        let button = UIButton(type: .system)
-        
-        let questionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.7), .font: UIFont.systemFont(ofSize: 16.0)]
-        
-        let actionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 16.0)]
-
-        var attributedTitle = NSMutableAttributedString()
-            
-        if case .passwordRetrieval = type {
-            
-            attributedTitle = NSMutableAttributedString(string: "Forgotten your password? ", attributes: questionAttributes)
-            
-            attributedTitle.append(NSAttributedString(string: "Get help logging in", attributes: actionAttributes))
-            
-        } else {
-            
-            attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: questionAttributes)
-
-            attributedTitle.append(NSAttributedString(string: "Sign up", attributes: actionAttributes))
-            
-        }
-        
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
+    // MARK: - Button Action Selector Functions
+    
+    @objc func presentRegistrationController() {
+        let registrationController = RegistrationController()
+        navigationController?.pushViewController(registrationController, animated: true)
     }
 }

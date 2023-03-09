@@ -49,6 +49,37 @@ import UIKit
 //    }
 //}
 
+extension UIButton {
+    
+    func setAttributedTitle(withQuestion question: String, andAction action: String) {
+        
+        let questionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16.0)]
+        
+        let actionAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1.0, alpha: 0.87), .font: UIFont.boldSystemFont(ofSize: 16.0)]
+            
+        let attributedTitle = NSMutableAttributedString(string: question + " ", attributes: questionAttributes)
+            
+        attributedTitle.append(NSAttributedString(string: action + " ", attributes: actionAttributes))
+                    
+        setAttributedTitle(attributedTitle, for: .normal)
+        
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+extension UIViewController {
+    
+    func configureGradientLayer() {
+        
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
+}
+
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,

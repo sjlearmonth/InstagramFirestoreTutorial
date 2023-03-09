@@ -13,6 +13,7 @@ class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         let leftIndent = UIView()
+        
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             leftIndent.heightAnchor.constraint(equalToConstant: 50.0),
@@ -24,7 +25,6 @@ class CustomTextField: UITextField {
         borderStyle = .none
         textColor = .white
         keyboardAppearance = .dark
-        keyboardType = .emailAddress
         backgroundColor = UIColor(white: 1.0, alpha: 0.1)
         setHeight(50.0)
         attributedPlaceholder = NSAttributedString(string: placeholder,
